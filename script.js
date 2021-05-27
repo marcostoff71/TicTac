@@ -31,16 +31,15 @@ let nombreJ2 = "Jugador 2";
 cbxTipoJuego.addEventListener("change", (e) => {
   if (cbxTipoJuego.selectedIndex == 1) {
     bot = true;
-    console.log("entre");
-    console.log(bot);
+    
     txtnameJ2.setAttribute("readonly", "");
     txtnameJ2.readOnly = true;
     lblNombreJ2.textContent = "Puntos de Bot: ";
     txtnameJ2.textContent = "";
     txtnameJ2.classList.add("lectura");
     nombreJ2 = "Botsito 0.1";
-    Reset();
-    ComprobarTurno();
+    
+    
   } else {
     bot = false;
     txtnameJ2.readOnly = true;
@@ -48,8 +47,11 @@ cbxTipoJuego.addEventListener("change", (e) => {
     nombreJ2 = "Jugador 2";
     lblNombreJ2.textContent = `Puntos de ${nombreJ2}: `;
     txtnameJ2.classList.remove("lectura");
-    Reset();
+    
   }
+  ComprobarTurno();
+  Reset();
+  mostrarPuntos();
 });
 
 /*Comprobar nombre de los jugadores*/
