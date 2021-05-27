@@ -51,15 +51,17 @@ color: rgb(214, 187, 187);
   border-color: rgb(0, 0, 0);
 }
 .select-css:focus {
-  border-color: rgb(167, 167, 167);
+  border-color: rgb(255, 255, 255);
   box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
   box-shadow: 0 0 0 3px -moz-mac-focusring;
-  color: rgb(156, 156, 156), 255); 
+  color: rgb(255, 253, 253); 
   outline: none;
 }
 .select-css option {
   font-weight:normal;
 }
+
+
 
 
 
@@ -135,4 +137,9 @@ color: rgb(214, 187, 187);
   0 0 30px #cc752e,
   0 0 60px #cc682e;
   transition: 0.5s;
+}
+.lectura{
+  content: Solo lectura;
+  border: 1px solid red;
+  background: #000000;
 }
