@@ -122,7 +122,7 @@ function comprobarGanador(pTurno) {
     if (pTurno === 1 && gano()) {
       puntosJ1++;
       if(puntosJ1===5){
-        mostrarMensajeGanador(2);
+        mostrarMensajeGanador(1);
         Reset();
       }else{
         mostrarMensaje(pTurno);
