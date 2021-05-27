@@ -121,12 +121,23 @@ function comprobarGanador(pTurno) {
     
     if (pTurno === 1 && gano()) {
       puntosJ1++;
-      mostrarMensaje(pTurno);
-      Limpiar();
+      if(puntosJ1===5){
+        mostrarMensajeGanador(2);
+        Reset();
+      }else{
+        mostrarMensaje(pTurno);
+        Limpiar();
+      }
     } else if (pTurno === 2 && gano()) {
       puntosJ2++;
-      mostrarMensaje(pTurno);
-      Limpiar();
+      if(puntosJ2===5){
+        
+        mostrarMensajeGanador(2);
+        Reset();
+      }else{
+        mostrarMensaje(pTurno);
+        Limpiar();
+      }
     }else{
       turno=turno===1?2:1;
     }
@@ -135,19 +146,38 @@ function comprobarGanador(pTurno) {
   }
   mostrarPuntos();
 }
+function mostrarMensajeGanador(pTurno){
+  
+    Swal.fire({
+      title: `!!!!Felicidades Ganaste ${pTurno===1?nombreJ1:nombreJ2} ¡¡¡¡`,
+      width: 600,
+      padding: '3em',
+      background: '#fff url(/images/trees.png)',
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `
+      ,
+      confirmButtonText:'Aceptar'
+    })
+  
+}
+
 function mostrarMensaje(turno) {
   if (turno === 1) {
 
     Swal.fire({
       icon: 'success',
-      title: `Gano ${nombreJ1} tienes ${puntosJ1} puntos`,
+      title: `Gano ${nombreJ1} tienes ${puntosJ1} ${puntosJ1==1?"punto":"puntos"}`,
       showConfirmButton: false,
       timer: 1000
     })
   } else {
     Swal.fire({
       icon: 'success',
-      title: `Gano ${nombreJ2} tienes ${puntosJ2} puntos`,
+      title: `Gano ${nombreJ2} tienes ${puntosJ2} ${puntosJ2==1?"punto":"puntos"}`,
       showConfirmButton: false,
       timer: 1000
     })
@@ -255,7 +285,12 @@ function gano() {
 
   return false;
 }
-function Reset() {}
+function Reset() {
+  puntosJ1=0;
+  puntosJ2=0;
+
+  Limpiar();
+}
 
 function Limpiar() {
   turno=1;
