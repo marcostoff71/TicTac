@@ -1,5 +1,5 @@
 body{
-  background: rgb(73, 73, 73);
+  background: rgb(75, 75, 75);
   font-family: sans-serif;
 }
 /*------Contenedor-----*/
@@ -27,6 +27,14 @@ background: rgb(141, 141, 141);
 border: 1px solid white;
 font-size: 22px;
 color: rgb(214, 187, 187);
+}
+
+.help button:hover{
+  box-shadow: 
+    0 0 10px #b9c4bd,
+    0 0 30px #d0dad4,
+    0 0 60px #d1dad4;
+    transition: 0.5s;
 }
 .select-css {
   display: block;
@@ -80,6 +88,7 @@ color: rgb(214, 187, 187);
 
 /*contendor de los botones*/
 .con{
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -98,16 +107,34 @@ color: rgb(214, 187, 187);
 }
 
 .btn:hover{
-  width: 2.1em;
-  height: 2.1em;
+  width: 2em;
+  height: 2em;
   transition: 0.5s;
-  border: 1px solid white;
+  border: 3px solid white;
   box-shadow: 
-  10px rgb(167, 84, 84);
+  0 0 10px #bbbbbb,
+  0 0 30px #8a8a8a,
+  0 0 60px #b8b8b8;
 }
 
 /*Botones presionador */
 
 .btnX{
+  background: #33c26f;
+  border: 1px solid white;
+  box-shadow: 
+  0 0 10px #2ecc71,
+  0 0 30px #2ecc71,
+  0 0 60px #2ecc71;
+  transition: 0.5s;
+}
 
+.btnO{
+  background: #c25c33;
+  border: 1px solid white;
+  box-shadow: 
+  0 0 10px #cc682e,
+  0 0 30px #cc752e,
+  0 0 60px #cc682e;
+  transition: 0.5s;
 }

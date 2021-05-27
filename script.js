@@ -11,6 +11,10 @@ let btn2_2 = document.getElementById("btn2_2");
 let txtnameJ1 = document.getElementById("txtnameJ1");
 let txtnameJ2 = document.getElementById("txtnameJ2");
 let lblNombreJ1=document.getElementById("lblNombreJ1");
+let lblNombreJ2=document.getElementById("lblNombreJ2");
+let lblTurno=document.getElementById("lblTurno");
+let lblpuntosJ1=document.getElementById("lblpuntosJ1");
+let lblpuntosJ2=document.getElementById("lblpuntosJ2");
 
 let bot=false;
 let turno = 1;
@@ -22,6 +26,7 @@ let nombreJ2 = "Jugador 2";
 
 /*Comprobar nombre de los jugadores*/
 txtnameJ1.addEventListener("keydown", (e) => {
+  
   console.log(txtnameJ1.value);
   if (txtnameJ1.value.trim() !== "") {
     console.log(txtnameJ1.textContent)
@@ -31,17 +36,27 @@ txtnameJ1.addEventListener("keydown", (e) => {
     nombreJ1 = "Jugador 1";
     lblNombreJ1.textContent=`Puntos ${nombreJ1}`
   }
+  ComprobarTurno();
 });
 
-txtnameJ2.addEventListener("keypress", (e) => {
+txtnameJ2.addEventListener("keydown", (e) => {
+  
+  console.log("entre");
   if (txtnameJ2.value.trim() !== "") {
     nombreJ2 = txtnameJ2.value.trim();
-    lblNombreJ1.value=`Puntos ${nombreJ1}:`    
+    lblNombreJ2.textContent=`Puntos ${nombreJ2}:`    
+    console.log("Entre mas xd")
   } else {
-    nombreJ2 = "Jugador 1";
-    lblNombreJ1.value=`Puntos ${nombreJ1}:`
+    nombreJ2 = "Jugador 2";
+    lblNombreJ2.textContent=`Puntos ${nombreJ2}:`
   }
+  ComprobarTurno();
 });
+
+
+function ComprobarTurno(){
+  lblTurno.textContent=turno===1?nombreJ1:nombreJ2;
+}
 
 btn0_0.addEventListener("click", (e) => {
   dibujar(btn0_0);
@@ -84,40 +99,52 @@ function dibujar(btn) {
       btn.value = "X";
       btn.classList.add("btnX");
       comprobarGanador(turno);
-      turno++;
+      
     } else {
       btn.value = "O";
       btn.classList.add("btnO");
       comprobarGanador(turno);
-      turno--;
+      
     }
   }
+  ComprobarTurno();
 }
 
-function comprobarGanador(turno) {
+function comprobarGanador(pTurno) {
   conCasillas++;
   if (conCasillas < 9) {
-    if (turno === 1 && gano()) {
+    
+    if (pTurno === 1 && gano()) {
       puntosJ1++;
-      mostrarMensaje(turno);
+      mostrarMensaje(pTurno);
       Limpiar();
-    } else if (turno === 2 && gano()) {
+    } else if (pTurno === 2 && gano()) {
       puntosJ2++;
-      mostrarMensaje(turno);
+      mostrarMensaje(pTurno);
       Limpiar();
+    }else{
+      turno=turno===1?2:1;
     }
   } else {
-
+    mostrarEmpate();
   }
+  mostrarPuntos();
 }
 function mostrarMensaje(turno) {
   if (turno === 1) {
+
   } else {
 
   }
 }
+function mostrarPuntos(){
+  lblpuntosJ1.textContent=puntosJ1.toString();
+  lblpuntosJ2.textContent=puntosJ2.toString();
+}
+function mostrarEmpate() {
 
-function mostrarEmpate() {}
+  Limpiar();
+}
 function gano() {
   /*
     [0_0][0_1][0_2]
@@ -210,6 +237,9 @@ function gano() {
 function Reset() {}
 
 function Limpiar() {
+  turno=1;
+  ComprobarTurno();
+  conCasillas=0;
   btn0_0.value = "";
   btn0_1.value = "";
   btn0_2.value = "";
