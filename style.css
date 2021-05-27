@@ -1,0 +1,113 @@
+body{
+  background: rgb(73, 73, 73);
+  font-family: sans-serif;
+}
+/*------Contenedor-----*/
+.conJuego{
+  color: white;
+  width: 450px;
+  height: 50%;
+  margin: auto;
+  background: rgb(63, 63, 63);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 20px;
+  border: 1px solid white;
+  }
+
+  
+/*-----Panel para introducir nombre y en donde se ven los puntos*/
+.help{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.help button{
+background: rgb(141, 141, 141);
+border: 1px solid white;
+font-size: 22px;
+color: rgb(214, 187, 187);
+}
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-family: 'Verdana', sans-serif;
+  background: rgb(151, 151, 151);
+  color: white;
+}
+.select-css::-ms-expand {
+  display: none;
+
+}
+.select-css:hover {
+  border-color: rgb(0, 0, 0);
+}
+.select-css:focus {
+  border-color: rgb(167, 167, 167);
+  box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: rgb(156, 156, 156), 255); 
+  outline: none;
+}
+.select-css option {
+  font-weight:normal;
+}
+
+.help button:hover{
+
+}
+
+.info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+}
+.info label{
+  padding: 0px 5px;
+  text-align: center;
+}
+.info input{
+  font-size: 1em;
+  height: 1.5em;
+  width: 33%;
+  background: rgb(110, 110, 110);
+  border-radius: 11px;
+  border: 1px solid white;
+  color: white;
+}
+
+
+/*contendor de los botones*/
+.con{
+  display: flex;
+  justify-content: center;
+}
+
+
+/*botones*/
+.btn{
+  font-size: 2.5em;
+  color: white;
+  width: 2em;
+  height: 2em;
+  margin: 5px;
+  border-radius: 4px;
+  border: 1px solid rgb(2, 2, 2);
+  background: rgb(179, 179, 179);
+}
+
+.btn:hover{
+  width: 2.1em;
+  height: 2.1em;
+  transition: 0.5s;
+  border: 1px solid white;
+  box-shadow: 
+  10px rgb(167, 84, 84);
+}
+
+/*Botones presionador */
+
+.btnX{
+
+}

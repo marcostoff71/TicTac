@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="conJuego">
+        <div class="help">
+            <button id="btnHelp">?</button>
+        </div>
+        <div class="info">
+            <label>Con quien deseas jugar:</label>
+            <select class="select-css">
+                <option value="Compañero" >Comapañero</option>
+                <option value="Bot">Bot</option>
+            </select>
+
+        </div>
+        <div class="info">
+            <label>Jugador 1</label>
+            <input type="text" maxlength="13" id="txtnameJ1">
+            <label id="lblNombreJ1">Puntos jugador 2: </label>
+            <label id="puntosJ1">0</label>
+        </div>
+        <div class="info">
+            <label>Jugador 2</label>
+            <input type="text" maxlength="13" id="txtnameJ2">
+            <label id="lblNombreJ2">Puntos jugador 2: </label>
+            <label id="puntos2">0</label>
+        </div>
+        <table class="con">
+            <tbody class="botones">
+                <tr>
+                    <td><input type="button" class="btn" value="" id="btn0_0"></td>
+                    <td><input type="button" class="btn" value="" id="btn0_1"></td>
+                    <td><input type="button" class="btn" value="" id="btn0_2"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="" id="btn1_0"></td>
+                    <td><input type="button" class="btn" value="O" id="btn1_1"></td>
+                    <td><input type="button" class="btn" value="" id="btn1_2"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="btn" value="" id="btn2_0"></td>
+                    <td><input type="button" class="btn" value="" id="btn2_1"></td>
+                    <td><input type="button" class="btn" value="" id="btn2_2"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
