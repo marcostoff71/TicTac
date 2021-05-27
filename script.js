@@ -131,7 +131,6 @@ function comprobarGanador(pTurno) {
     } else if (pTurno === 2 && gano()) {
       puntosJ2++;
       if(puntosJ2===5){
-        
         mostrarMensajeGanador(2);
         Reset();
       }else{
