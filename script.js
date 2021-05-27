@@ -1,3 +1,8 @@
+
+document.getElementById('btnHelp').addEventListener('click',(e)=>{
+
+  Swal.fire("Gana el que complete 5 puntos");
+});
 /*Varibales globales*/
 let btn0_0 = document.getElementById("btn0_0");
 let btn0_1 = document.getElementById("btn0_1");
@@ -133,8 +138,19 @@ function comprobarGanador(pTurno) {
 function mostrarMensaje(turno) {
   if (turno === 1) {
 
+    Swal.fire({
+      icon: 'success',
+      title: `Gano ${nombreJ1} tienes ${puntosJ1} puntos`,
+      showConfirmButton: false,
+      timer: 1000
+    })
   } else {
-
+    Swal.fire({
+      icon: 'success',
+      title: `Gano ${nombreJ2} tienes ${puntosJ2} puntos`,
+      showConfirmButton: false,
+      timer: 1000
+    })
   }
 }
 function mostrarPuntos(){
@@ -142,7 +158,12 @@ function mostrarPuntos(){
   lblpuntosJ2.textContent=puntosJ2.toString();
 }
 function mostrarEmpate() {
-
+  Swal.fire({
+    icon: 'info',
+    title: `Esto es un empate nadie se lleva puntos`,
+    showConfirmButton: false,
+    timer: 1000
+  })
   Limpiar();
 }
 function gano() {
